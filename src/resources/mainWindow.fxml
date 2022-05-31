@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" minHeight="210.0" scaleShape="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+    <StackPane maxHeight="210.0" maxWidth="210.0" minHeight="210.0" minWidth="210.0" prefHeight="210.0" prefWidth="210.0" translateZ="1.0">
+        <VBox.margin>
+            <Insets bottom="6.0" />
+        </VBox.margin>
+        <ImageView fx:id="logoImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </ImageView>
+        <Pane fx:id="pane" onMouseExited="#onPaneMouseExited" onMouseMoved="#onPaneMouseMoved" opacity="0.5">
+            <ImageView fx:id="expandArrowUp" fitHeight="15.0" fitWidth="15.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#onArrowUpClick" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/expand_arrow_up.png" />
+            </ImageView>
+            <ImageView fx:id="expandArrowDown" fitHeight="15.0" fitWidth="15.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#onArrowDownClick" pickOnBounds="true" preserveRatio="true" visible="false">
+                <Image url="@images/expand_arrow_down.png" />
+            </ImageView>
+            <ImageView fx:id="closeImageView" fitHeight="15.0" fitWidth="15.0" layoutX="188.0" layoutY="7.0" onMouseClicked="#onCloseImageViewClick" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/close.png" />
+            </ImageView>
+            <ImageView fx:id="backwardImageView" fitHeight="30.0" fitWidth="30.0" layoutX="4.0" onMouseClicked="#onBackwardButtonClick" pickOnBounds="true" preserveRatio="true" translateX="50.0" translateY="165.0">
+                <Image url="@images/backward.png" />
+            </ImageView>
+            <ImageView fx:id="playImageView" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#onPlayButtonClick" pickOnBounds="true" preserveRatio="true" translateX="90.0" translateY="165.0">
+                <Image url="@images/play.png" />
+            </ImageView>
+            <ImageView fx:id="pauseImageView" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#onPauseImageViewClick" pickOnBounds="true" preserveRatio="true" translateX="90.0" translateY="165.0" visible="false">
+                <Image url="@images/pause.png" />
+            </ImageView>
+            <ImageView fx:id="forwardImageView" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#onForwardButtonClick" pickOnBounds="true" preserveRatio="true" translateX="125.0" translateY="165.0">
+                <Image url="@images/forward.png" />
+            </ImageView>
+            <ImageView fx:id="addRadioStationImageView" fitHeight="15.0" fitWidth="15.0" layoutX="7.0" layoutY="173.0" onMouseClicked="#onPlusImageViewClick" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/plus_math.png" />
+            </ImageView>
+            <ImageView fx:id="volumeImageView" fitHeight="15.0" fitWidth="15.0" layoutX="188.0" layoutY="173.0" onMouseClicked="#onVolumeImageViewClick" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/sound.png" />
+            </ImageView>
+         <Slider fx:id="volumeSlider" layoutX="1.0" layoutY="5.0" maxHeight="100.0" onMouseDragged="#onVolumeSliderDrag" onMouseExited="#onVolumeSliderExited" orientation="VERTICAL" translateX="187.0" translateY="50.0" value="100.0" />
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </Pane>
+    </StackPane>
+    <StackPane prefHeight="150.0" prefWidth="200.0">
+        <ListView fx:id="radioListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onItemListViewClicked" prefHeight="202.0" prefWidth="210.0">
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="changeMenu" mnemonicParsing="false" onAction="#onChangeMenuClick" text="Изменить" />
+                        <MenuItem fx:id="deleteMenu" mnemonicParsing="false" onAction="#onDeleteMenuClick" text="Удалить" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </ListView>
+        <Pane fx:id="addRadioPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="210.0" spacing="10.0">
+                <padding>
+                    <Insets top="5.0" />
+                </padding>
+                <Label fx:id="titleLabel" text="Добавить радиостанцию">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="5.0" top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Palatino" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="nameTextField" maxWidth="200.0" promptText="Название">
+                    <font>
+                        <Font name="Palatino" size="13.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="logoTextField" maxWidth="200.0" promptText="Логотип">
+                    <font>
+                        <Font name="Palatino" size="13.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="urlTextField" maxWidth="200.0" promptText="Ссылка">
+                    <font>
+                        <Font name="Palatino" size="13.0" />
+                    </font>
+                </TextField>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                    <Label fx:id="cancelLabel" alignment="CENTER" onMouseClicked="#onCancelLabelClick" prefWidth="75.0" text="Отмена">
+                        <font>
+                            <Font name="Palatino" size="14.0" />
+                        </font>
+                    </Label>
+               <Label fx:id="addChangeLabel" alignment="CENTER" onMouseClicked="#onAddChangeLabelClick" prefWidth="75.0" text="Добавить">
+                  <font>
+                     <Font name="Palatino" size="14.0" />
+                  </font>
+               </Label>
+                </HBox>
+            </VBox>
+        </Pane>
+    </StackPane>
+</VBox>
