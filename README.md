@@ -2,15 +2,15 @@
 Приложение для воспроизведения интернет-радио.
 Разработано с использованием библиотек Java 11, JavaFX 18, OpenCSV 5.6.
 
-![Фото](images/img 1.png)
-![Фото](images/img 2.png)
-![Фото](images/img 5.png)
-![Фото](images/img 6.png)
-![Фото](images/img 7.png)
+![](images/img1.png)
+![](images/img2.png)
+![](images/img5.png)
+![](images/img6.png)
+![](images/img7.png)
 
-![Фото](images/img 3.png)
-![Фото](images/img 4.png)
-![Фото](images/img 8.png)
+![](images/img3.png)
+![](images/img4.png)
+![](images/img8.png)
 ###Особенности:
 + Добавление, изменение, удаление радиостанций
 + Всплывающая панель управления
