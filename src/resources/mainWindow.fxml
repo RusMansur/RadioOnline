@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" minHeight="210.0" scaleShape="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<VBox alignment="TOP_CENTER" minHeight="210.0" scaleShape="false" style="-fx-background-radius: 6; -fx-border-radius: 6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
     <StackPane maxHeight="210.0" maxWidth="210.0" minHeight="210.0" minWidth="210.0" prefHeight="210.0" prefWidth="210.0" translateZ="1.0">
         <VBox.margin>
             <Insets bottom="6.0" />
@@ -59,8 +59,8 @@
             </StackPane.margin>
         </Pane>
     </StackPane>
-    <StackPane prefHeight="150.0" prefWidth="200.0">
-        <ListView fx:id="radioListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onItemListViewClicked" prefHeight="202.0" prefWidth="210.0">
+    <StackPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 6;">
+        <ListView fx:id="radioListView" maxHeight="196.0" maxWidth="200.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onItemListViewClicked" prefHeight="196.0" prefWidth="198.0" style="-fx-background-radius: 6;">
             <contextMenu>
                 <ContextMenu>
                     <items>
