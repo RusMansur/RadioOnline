@@ -86,11 +86,7 @@ public class MainController {
 		String name = selectionModel.getSelectedItem();
 		RadioStation radioStation = radioStationDB.getRadioStation(name);
 		if (radioStation == null) {
-			radioStation = new RadioStation(
-					radioStationList.firstKey(),
-					radioStationList.firstEntry().getValue().getLogoPath(),
-					radioStationList.firstEntry().getValue().getUrl()
-			);
+			radioStation = new RadioStation(radioStationList.firstKey(), radioStationList.firstEntry().getValue().getLogoPath(), radioStationList.firstEntry().getValue().getUrl());
 		}
 		if (!playRadioStation(radioStation)) onForwardButtonClick(mouseEvent);
 	}
@@ -135,9 +131,9 @@ public class MainController {
 		selectionModel = radioListView.getSelectionModel();
 		index = selectionModel.getSelectedIndex();
 		if (forward) {
-			if (index < radioStationList.size() - 1) {selectionModel.selectNext();} else {selectionModel.selectFirst();}
+			if (index < radioStationList.size() - 1) { selectionModel.selectNext(); } else { selectionModel.selectFirst(); }
 		} else {
-			if (index > 0) {selectionModel.selectPrevious();} else selectionModel.selectLast();
+			if (index > 0) { selectionModel.selectPrevious(); } else selectionModel.selectLast();
 		}
 		RadioStation radioStation = radioStationList.get(selectionModel.getSelectedItem());
 		playRadioStation(radioStation);
@@ -165,7 +161,7 @@ public class MainController {
 		titleLabel.setText("Добавить радиостанцию");
 		addChangeLabel.setText("Добавить");
 		cleanTextFields();
-		addChangeStationPaneShow();
+		addChangeStationPaneShow(mouseEvent);
 	}
 
 	public void onAddChangeLabelClick(MouseEvent mouseEvent) {
@@ -190,14 +186,14 @@ public class MainController {
 	}
 
 	// Контекстное меню
-	public void onChangeMenuClick(ActionEvent actionEvent) {
+	public void onChangeMenuClick(MouseEvent mouseEvent) {
 		selectionModel = radioListView.getSelectionModel();
 		index = selectionModel.getSelectedIndex();
 		String nameString = selectionModel.getSelectedItem();
 		RadioStation radioStation = radioStationDB.getRadioStation(nameString);
 		titleLabel.setText("Изменить радиостанцию");
 		addChangeLabel.setText("Изменить");
-		addChangeStationPaneShow();
+		addChangeStationPaneShow(mouseEvent);
 		if (radioStation != null) {
 			nameTextField.setText(radioStation.getName());
 			logoTextField.setText(radioStation.getLogoPath());
@@ -248,7 +244,8 @@ public class MainController {
 		fadeTransition.play();
 	}
 
-	private void addChangeStationPaneShow() {
+	private void addChangeStationPaneShow(MouseEvent mouseEvent) {
+		onArrowDownClick(mouseEvent);
 		radioListView.setVisible(false);
 		stage.setHeight(420);
 		addRadioPane.setVisible(true);
