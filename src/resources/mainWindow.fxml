@@ -26,11 +26,8 @@
             </StackPane.margin>
         </ImageView>
         <Pane fx:id="pane" onMouseExited="#onPaneMouseExited" onMouseMoved="#onPaneMouseMoved" opacity="0.5">
-            <ImageView fx:id="expandArrowUp" fitHeight="15.0" fitWidth="15.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#onArrowUpClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="expandArrow" fitHeight="15.0" fitWidth="15.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#onExpandArrowClick" pickOnBounds="true" preserveRatio="true">
                 <Image url="@images/expand_arrow_up.png" />
-            </ImageView>
-            <ImageView fx:id="expandArrowDown" fitHeight="15.0" fitWidth="15.0" layoutX="5.0" layoutY="5.0" onMouseClicked="#onArrowDownClick" pickOnBounds="true" preserveRatio="true" visible="false">
-                <Image url="@images/expand_arrow_down.png" />
             </ImageView>
             <ImageView fx:id="closeImageView" fitHeight="15.0" fitWidth="15.0" layoutX="188.0" layoutY="7.0" onMouseClicked="#onCloseImageViewClick" pickOnBounds="true" preserveRatio="true">
                 <Image url="@images/close.png" />
