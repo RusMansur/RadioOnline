@@ -5,4 +5,5 @@ module AudioFX {
 	requires javafx.fxml;
 	requires javafx.media;
 	requires com.opencsv;
+    requires lombok;
 }
